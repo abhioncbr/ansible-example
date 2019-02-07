@@ -1,0 +1,25 @@
+- name: create group
+  group:
+    comment: "Create group"
+    name: "{{ default_group }}"
+
+- name: create user
+  user:
+    system: yes
+    comment: "Create User"
+    name: "{{ default_user }}"
+    group: "{{ default_group }}"
+
+- name: Check if default directory is present
+  stat:
+    path: "{{ default_base_dir }}"
+  register: default_dir
+
+- name: Create default directory
+  file:
+    mode: 0755
+    state: directory
+    owner: "{{ default_user }}"
+    group: "{{ default_group }}"
+    path: "{{ default_base_dir }}"
+  when: default_dir.stat.exists == False

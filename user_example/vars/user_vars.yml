@@ -1,0 +1,6 @@
+#default package installation path
+default_base_dir: /home/workshop
+
+#default user for running processes
+default_user: workshop
+default_group: workshop
