@@ -1,3 +1,5 @@
+ansible_user: centos
+
 #default package installation path
 default_base_dir: /home/workshop
 

@@ -1,12 +1,10 @@
 - name: create group
   group:
-    comment: "Create group"
     name: "{{ default_group }}"
 
 - name: create user
   user:
     system: yes
-    comment: "Create User"
     name: "{{ default_user }}"
     group: "{{ default_group }}"
 
