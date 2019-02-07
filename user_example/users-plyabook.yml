@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: yes
+  vars_files:
+    - vars/user_vars.yml
+  roles:
+    - users
